@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "outDir": "./build",
+    "strict": true,
+    "moduleResolution": "node",
+    "lib": ["ESNext"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "build"],
+  "ts-node": {
+    "esm": true,
+    "files": true
+  }
+}
