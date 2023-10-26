@@ -1,7 +1,8 @@
 import express, { Express, json, NextFunction, Request, Response, urlencoded } from "express";
 import helmet from "helmet";
 import cors from "cors";
-import { configDotenv } from "dotenv";
+import "dotenv/config";
+
 import connectToMongoDB from "./dbs/mongodb.js";
 
 const app: Express = express();
@@ -9,8 +10,6 @@ app.use(helmet());
 app.use(cors());
 app.use(urlencoded());
 app.use(json());
-
-configDotenv();
 
 // connect to MongoDB
 await connectToMongoDB();
