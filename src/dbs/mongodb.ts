@@ -10,6 +10,11 @@ async function connectToMongoDB() {
       serverSelectionTimeoutMS
     });
     logger.info("Connected to MongoDB");
+
+    if (process.env.NODE_ENV === "development") {
+      mongoose.set("debug", true);
+      mongoose.set("debug", { color: true });
+    }
   } catch (err) {
     logger.info(`Failed to connect to MongoDB: ${err}`);
     if (retryCount < 3) {
