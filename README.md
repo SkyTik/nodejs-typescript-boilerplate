@@ -2,14 +2,18 @@
 
 Boilerplate for using Expressjs + Typescript + ESM module
 
-# Express
+## Express
 Init a server, try to handle unhandledRejection and uncaughtException. Gracefully shutdown and disconnect all connection to databases.
-# Package manager
+## Package manager
 Use pnpm
-# Typescript
+## Typescript
 Setup nodemon + ts-node to run with development mode: `npm run dev`
 Config ts-node + tsconfig to work with ESM module
-# Eslint
+## Eslint
 Use Airbnb base + Prettier
-# Mongodb
+## Mongodb
 Use mongoose to conenct with retry handling
+
+
+### Note
+Compression will be done on Nginx/KongAPI instead of in service
