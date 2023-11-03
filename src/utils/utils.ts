@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
 import { NextFunction, Request, Response } from "express";
 
-function makeResponse(res: Response, status: number, message: string, data: object) {
+function makeResponse(res: Response, status: number, message: string, data?: object) {
   return res.status(status).json({ status, message, data });
 }
 

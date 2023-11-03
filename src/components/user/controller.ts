@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
-import prisma from "../../dbs/prisma.js";
-import userModel from "./model.js";
 import { userLogin, userSignUp } from "./service.js";
 import { makeResponse } from "../../utils/utils.js";
 
