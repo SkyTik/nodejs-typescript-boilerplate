@@ -4,15 +4,20 @@ import cors from "cors";
 import "dotenv/config";
 
 import connectToMongoDB from "./dbs/mongodb.js";
+import prisma from "./dbs/prisma.js";
+import router from "./index.js";
 
 const app: Express = express();
 app.use(helmet());
 app.use(cors());
-app.use(urlencoded());
+app.use(urlencoded({ extended: true }));
 app.use(json());
 
 // connect to MongoDB
 await connectToMongoDB();
+await prisma.$connect();
+
+app.use(router);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("404 Not Found");
