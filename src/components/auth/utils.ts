@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { JWTPayload } from "../types/ types.js";
+import { JWTPayload } from "../../types/types.js";
 
 function generateToken(
   payload: JWTPayload,
