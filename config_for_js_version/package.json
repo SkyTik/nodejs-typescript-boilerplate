@@ -1,0 +1,49 @@
+{
+  "name": "ahamove-pelias-v2",
+  "version": "1.0.0",
+  "keywords": [
+    "Pelias"
+  ],
+  "author": "Vu Nguyen - vunh@ahamove.com",
+  "description": "",
+  "main": "src/app.js",
+  "type": "module",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@ahamove/pelias-client": "^0.0.29",
+    "@elastic/elasticsearch": "7",
+    "@google-cloud/storage": "^7.3.1",
+    "agentkeepalive": "^4.5.0",
+    "axios": "^1.5.1",
+    "cors": "^2.8.5",
+    "cron": "^3.1.1",
+    "csv-parse": "^5.5.2",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "http-status-codes": "^2.3.0",
+    "ioredis": "^5.3.2",
+    "multer": "1.4.5-lts.1",
+    "pelias-dbclient-upgrade": "^1.0.6",
+    "pelias-model": "^7.1.0",
+    "pino": "^8.15.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "pino-pretty": "^10.2.3",
+    "prettier": "^3.0.3"
+  }
+}
