@@ -2,6 +2,7 @@
 # Expressjs + Typescript + ESM
 
 Boilerplate for using Expressjs + Typescript + ESM module
+Architecture inspired by: [Nodejs Best Practice Github Repo](https://github.com/goldbergyoni/nodebestpractices)
 
 # Express
 Init a server, try to handle unhandledRejection and uncaughtException. Gracefully shutdown and disconnect all connection to databases.
