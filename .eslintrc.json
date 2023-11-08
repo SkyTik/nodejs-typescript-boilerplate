@@ -12,7 +12,8 @@
     "airbnb-base",
     "airbnb-typescript/base",
     "prettier",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:security/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",

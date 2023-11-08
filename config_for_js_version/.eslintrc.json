@@ -10,6 +10,7 @@
     "prettier"
   ],
   "extends": [
+    "plugin:security/recommended",
     "eslint:recommended",
     "airbnb-base",
     "prettier"
