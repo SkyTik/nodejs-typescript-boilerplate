@@ -1,8 +1,7 @@
-import express, { Express, json, NextFunction, Request, Response, urlencoded } from "express";
-import helmet from "helmet";
 import cors from "cors";
 import "dotenv/config";
-
+import express, { Express, json, NextFunction, Request, Response, urlencoded } from "express";
+import helmet from "helmet";
 import { parse } from "url";
 import connectToMongoDB from "./dbs/mongodb.js";
 import prisma from "./dbs/prisma.js";

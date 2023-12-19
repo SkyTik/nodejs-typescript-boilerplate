@@ -1,5 +1,6 @@
-import { User, Prisma } from "@prisma/client";
+import { Prisma, User } from "@prisma/client";
 import prisma from "../../dbs/prisma.js";
+
 // import userModel, { User } from "./model.js";
 
 async function insertUser(data: Prisma.UserCreateInput): Promise<User> {
@@ -15,4 +16,4 @@ async function updateUser(id: number, data: Prisma.UserUpdateInput) {
   return prisma.user.update({ where: { id }, data });
 }
 
-export { insertUser, findUser, updateUser };
+export { findUser, insertUser, updateUser };

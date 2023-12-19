@@ -1,14 +1,18 @@
 import { User } from "@prisma/client";
 import bcrypt from "bcrypt";
-import { StatusCodes } from "http-status-codes";
 import crypto from "crypto";
-import { findUser, insertUser, updateUser } from "./repository.js";
+import { StatusCodes } from "http-status-codes";
 import CustomError from "../../utils/error.js";
 import { generateToken } from "../auth/utils.js";
+import { findUser, insertUser, updateUser } from "./repository.js";
 
 async function userSignUp(email: string, username: string, password: string): Promise<User> {
   const hashedPassword: string = await bcrypt.hash(password, 10);
-  const user: User = await insertUser({ email, username, password: hashedPassword });
+  const user: User = await insertUser({
+    email,
+    username,
+    password: hashedPassword
+  });
   return user;
 }
 
@@ -40,4 +44,4 @@ async function userLogin(email: string, password: string) {
   return { accessToken };
 }
 
-export { userSignUp, userLogin };
+export { userLogin, userSignUp };
