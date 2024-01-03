@@ -1,7 +1,8 @@
-import Joi from "joi";
-import { StatusCodes } from "http-status-codes";
 import { NextFunction, Request, Response } from "express";
-import { makeResponse } from "../../utils/utils.js";
+import { StatusCodes } from "http-status-codes";
+import Joi from "joi";
+
+import { makeResponse } from "../../utils/utils";
 
 const userSignupSchema = Joi.object({
   username: Joi.string().required(),

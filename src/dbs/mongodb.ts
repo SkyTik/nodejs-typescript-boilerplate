@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import logger from "../utils/logger.js";
+
+import logger from "../utils/logger";
 
 const serverSelectionTimeoutMS = 5000;
 let retryCount = 0;

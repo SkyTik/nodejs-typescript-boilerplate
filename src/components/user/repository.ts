@@ -1,7 +1,8 @@
 import { Prisma, User } from "@prisma/client";
-import prisma from "../../dbs/prisma.js";
 
-// import userModel, { User } from "./model.js";
+import prisma from "../../dbs/prisma";
+
+// import userModel, { User } from "./model";
 
 async function insertUser(data: Prisma.UserCreateInput): Promise<User> {
   // const user: User = (await userModel.create({ email, username, password })).toObject();

@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
-import { makeResponse } from "../../utils/utils.js";
-import { userLogin, userSignUp } from "./service.js";
+
+import { makeResponse } from "../../utils/utils";
+import { userLogin, userSignUp } from "./service";
 
 async function signup(req: Request, res: Response) {
   const { email, username, password } = req.body;

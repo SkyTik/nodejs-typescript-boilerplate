@@ -1,12 +1,14 @@
-import cors from "cors";
 import "dotenv/config";
+
+import cors from "cors";
 import express, { Express, json, NextFunction, Request, Response, urlencoded } from "express";
 import helmet from "helmet";
 import { parse } from "url";
-import connectToMongoDB from "./dbs/mongodb.js";
-import prisma from "./dbs/prisma.js";
-import router from "./index.js";
-import logger from "./utils/logger.js";
+
+import connectToMongoDB from "./dbs/mongodb";
+import prisma from "./dbs/prisma";
+import router from "./index";
+import logger from "./utils/logger";
 
 const app: Express = express();
 app.use(helmet());

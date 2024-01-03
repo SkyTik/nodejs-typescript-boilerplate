@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
-import app from "./app.js";
-import prisma from "./dbs/prisma.js";
-import redis from "./dbs/redis.js";
-import logger from "./utils/logger.js";
+
+import app from "./app";
+import prisma from "./dbs/prisma";
+import redis from "./dbs/redis";
+import logger from "./utils/logger";
 
 const server = app.listen(8000, () => {
   logger.info("Server is running on port 8000!");

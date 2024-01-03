@@ -2,9 +2,10 @@ import { User } from "@prisma/client";
 import bcrypt from "bcrypt";
 import crypto from "crypto";
 import { StatusCodes } from "http-status-codes";
-import CustomError from "../../utils/error.js";
-import { generateToken } from "../auth/utils.js";
-import { findUser, insertUser, updateUser } from "./repository.js";
+
+import CustomError from "../../utils/error";
+import { generateToken } from "../auth/utils";
+import { findUser, insertUser, updateUser } from "./repository";
 
 async function userSignUp(email: string, username: string, password: string): Promise<User> {
   const hashedPassword: string = await bcrypt.hash(password, 10);

@@ -1,7 +1,8 @@
 import { Router } from "express";
-import { wrapAsync } from "../../utils/utils.js";
-import { login, signup } from "./controller.js";
-import { validateUserSignUp } from "./validation.js";
+
+import { wrapAsync } from "../../utils/utils";
+import { login, signup } from "./controller";
+import { validateUserSignUp } from "./validation";
 
 const router = Router();
 
