@@ -33,8 +33,7 @@
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 110,
-        "trailingComma": "none"
+        "printWidth": 110
       }
     ]
   }
