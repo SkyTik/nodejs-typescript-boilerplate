@@ -17,8 +17,8 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 
 // connect to MongoDB
-await connectToMongoDB();
-await prisma.$connect();
+// await connectToMongoDB();
+// await prisma.$connect();
 app.use((req: Request, res: Response, next: NextFunction) => {
   const { pathname, query } = parse(req.url, true);
   const logData = {
@@ -29,7 +29,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     uri: pathname,
     query,
     body: req.body,
-    status: 200
+    status: 200,
   };
 
   const originalSend = res.send;
