@@ -5,9 +5,9 @@ const config = {
   transport: {
     target: "pino-pretty",
     options: {
-      colorize: true
-    }
-  }
+      colorize: true,
+    },
+  },
 };
 
 const logger: Logger = process.env.NODE_ENV === "development" ? pino(config) : pino({ base: undefined });

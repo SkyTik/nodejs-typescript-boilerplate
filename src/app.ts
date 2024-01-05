@@ -7,8 +7,8 @@ import { parse } from "url";
 
 import connectToMongoDB from "./dbs/mongodb";
 import prisma from "./dbs/prisma";
-import router from "./index";
-import logger from "./utils/logger";
+import router from "./index.js";
+import logger from "./utils/logger.js";
 
 const app: Express = express();
 app.use(helmet());

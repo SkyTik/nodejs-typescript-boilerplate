@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 
 const serverSelectionTimeoutMS = 5000;
 let retryCount = 0;
@@ -8,7 +8,7 @@ let retryCount = 0;
 async function connectToMongoDB() {
   try {
     await mongoose.connect(process.env.MONGODB_URL, {
-      serverSelectionTimeoutMS
+      serverSelectionTimeoutMS,
     });
     logger.info("Connected to MongoDB");
 

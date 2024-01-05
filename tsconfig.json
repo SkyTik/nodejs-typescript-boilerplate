@@ -10,8 +10,4 @@
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "build"],
-  "ts-node": {
-    "esm": true,
-    "files": true
-  }
 }

@@ -2,12 +2,12 @@ import { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import Joi from "joi";
 
-import { makeResponse } from "../../utils/utils";
+import { makeResponse } from "../../utils/utils.js";
 
 const userSignupSchema = Joi.object({
   username: Joi.string().required(),
   email: Joi.string().email().required(),
-  password: Joi.string().min(6).max(25).required()
+  password: Joi.string().min(6).max(25).required(),
 });
 
 function validateUserSignUp(req: Request, res: Response, next: NextFunction) {

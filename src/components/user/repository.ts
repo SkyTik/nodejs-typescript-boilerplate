@@ -1,6 +1,6 @@
 import { Prisma, User } from "@prisma/client";
 
-import prisma from "../../dbs/prisma";
+import prisma from "../../dbs/prisma.js";
 
 // import userModel, { User } from "./model";
 

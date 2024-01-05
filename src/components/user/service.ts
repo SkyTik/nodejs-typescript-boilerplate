@@ -3,16 +3,16 @@ import bcrypt from "bcrypt";
 import crypto from "crypto";
 import { StatusCodes } from "http-status-codes";
 
-import CustomError from "../../utils/error";
-import { generateToken } from "../auth/utils";
-import { findUser, insertUser, updateUser } from "./repository";
+import CustomError from "../../utils/error.js";
+import { generateToken } from "../auth/utils.js";
+import { findUser, insertUser, updateUser } from "./repository.js";
 
 async function userSignUp(email: string, username: string, password: string): Promise<User> {
   const hashedPassword: string = await bcrypt.hash(password, 10);
   const user: User = await insertUser({
     email,
     username,
-    password: hashedPassword
+    password: hashedPassword,
   });
   return user;
 }
@@ -32,12 +32,12 @@ async function userLogin(email: string, password: string) {
     modulusLength: 2048,
     publicKeyEncoding: {
       type: "spki",
-      format: "pem"
+      format: "pem",
     },
     privateKeyEncoding: {
       type: "pkcs8",
-      format: "pem"
-    }
+      format: "pem",
+    },
   });
 
   const { accessToken, refreshToken } = generateToken({ email, name: user.username }, privateKey);
