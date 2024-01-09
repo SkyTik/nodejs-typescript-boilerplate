@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@godaddy/terminus": "^4.12.1",
     "@prisma/client": "^5.5.2",
     "agentkeepalive": "^4.5.0",
     "axios": "^1.6.4",

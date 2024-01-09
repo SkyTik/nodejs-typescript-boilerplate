@@ -1,3 +1,4 @@
+import { createTerminus } from "@godaddy/terminus";
 import mongoose from "mongoose";
 
 import app from "./app.js";
@@ -9,18 +10,29 @@ const server = app.listen(8000, () => {
   logger.info("Server is running on port 8000!");
 });
 
-process.on("unhandledRejection", (reason, promise) => {
-  logger.error({ reason, promise }, "Unhandled Promise Rejection");
+createTerminus(server, {
+  timeout: 1000,
+  signals: ["SIGINT", "SIGTERM"],
+  onSignal: () => {
+    logger.info("server is starting cleanup");
+    return Promise.all([redis.quit(), prisma.$disconnect(), mongoose.disconnect()]);
+  },
+  onShutdown: () => {
+    logger.info("cleanup finished, server is shutting down");
+    return Promise.resolve();
+  },
+  healthChecks: {
+    "/health-check": () => Promise.resolve(),
+  },
+  logger: logger.info,
 });
 
-process.on("uncaughtException", (err, source) => {
-  logger.error({ err, source }, "Uncaught Exception");
-  process.exit(1);
+// handle uncaughtException
+process.on("uncaughtException", (err) => {
+  logger.error(err);
 });
 
-process.on("SIGTERM", async () => {
-  await prisma.$disconnect();
-  await mongoose.disconnect();
-  redis.disconnect(false);
-  server.close();
+// handle unhandledRejection
+process.on("unhandledRejection", (err) => {
+  logger.error(err);
 });
